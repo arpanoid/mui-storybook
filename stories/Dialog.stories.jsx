@@ -4,6 +4,9 @@ import { Button, Dialog, DialogActions, DialogContent, DialogContentText, Dialog
 export default {
   title: 'Material-UI/Dialog',
   component: Dialog,
+  parameters: {
+    tags: ['autodocs'],
+  },
 };
 
 export const Default = () => {
@@ -18,4 +21,23 @@ export const Default = () => {
   };
 
   return (
-   
+    <>
+      <Button variant="contained" color="primary" onClick={handleClickOpen}>
+        Open Dialog
+      </Button>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>{"Dialog Title"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            This is a sample dialog. You can add any content inside the Dialog component.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
+};
